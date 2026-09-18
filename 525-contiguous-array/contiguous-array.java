@@ -12,8 +12,6 @@ class Solution {
             else
             one++;
             int diff= zero - one ;
-            if(diff == 0)
-            res = Math.max(res,i+1);
             if(!map.containsKey(diff)){
             map.put(diff ,i);
             }
