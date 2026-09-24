@@ -26,7 +26,7 @@ class Solution {
                     res.add(new int[]{s,e});
                 }
             }
-            if(end1 < end2)
+            if(end1 <= end2)
             {
                 i++;
             }
