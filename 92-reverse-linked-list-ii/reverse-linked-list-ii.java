@@ -20,7 +20,7 @@ class Solution {
 
         //else
         ListNode temp = head ;
-        ListNode before = temp;
+        ListNode before = null;
         int pos = 1;
         while(pos < left)
         {
