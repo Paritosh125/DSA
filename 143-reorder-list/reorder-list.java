@@ -6,10 +6,8 @@ class Solution {
 
         ListNode slow = head;
         ListNode fast = head;
-        ListNode beforeSlow = null;
 
         while (fast != null && fast.next != null) {
-            beforeSlow = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
