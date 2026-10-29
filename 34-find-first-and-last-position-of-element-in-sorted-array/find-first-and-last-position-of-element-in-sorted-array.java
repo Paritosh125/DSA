@@ -1,55 +1,56 @@
 class Solution {
     public int findFirst(int[] nums , int target)
     {
+        int answer = -1;
         int low = 0 ;
         int high = nums.length - 1;
-        int ans = -1;
-        while(low <= high )
+        while(low <=high)
         {
-            int mid = (low + high)/ 2 ;
-            if(nums[mid]== target)
+            int guess = (low + high) / 2 ;
+            if(nums[guess] < target)
             {
-                ans = mid ; 
-                high = mid - 1;
+                low = guess + 1;
             }
-            else if(nums[mid] < target)
+            else if(nums[guess]>target)
             {
-                low = mid + 1 ;
+                high = guess - 1;
             }
             else
             {
-                high = mid - 1;
+                answer = guess ;
+                high = guess - 1;
             }
         }
-        return ans;
+        return answer ;
     }
     public int findLast(int[] nums , int target)
     {
-        int low = 0 ;
+        int answer = -1;
+        int low = 0 ; 
         int high = nums.length - 1;
-        int ans = -1;
-        while(low <= high )
+        while(low <= high)
         {
-            int mid = (low + high)/ 2 ;
-            if(nums[mid]== target)
+            int guess = (low + high )/2 ; 
+            if(nums[guess]< target)
             {
-                ans = mid ; 
-                low = mid +1 ;
+                low = guess + 1;
             }
-            else if(nums[mid] < target)
+            else if(nums[guess] > target)
             {
-                low = mid + 1 ;
+                high = guess - 1;
             }
             else
             {
-                high = mid - 1;
+                answer = guess;
+                low = guess + 1;
             }
         }
-        return ans;
+        return answer ;
     }
+   
     public int[] searchRange(int[] nums, int target) {
-        int first = findFirst(nums,target);
-        int last = findLast(nums,target);
-          return new int[]{first,last};
+       int first = findFirst(nums ,target);
+       int last = findLast(nums, target);
+       return new int[]{first,last};
     }
 }
