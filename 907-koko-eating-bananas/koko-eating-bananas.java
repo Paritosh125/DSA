@@ -3,11 +3,15 @@ class Solution {
     public long getTotal(int[] arr, int target)
     {
         long sum = 0;
-
         for(int i : arr)
         {
-            int count = (i - 1) / target + 1;
-            sum += count;
+            // int count = (i - 1) / target + 1;
+            // sum += count;
+            sum = sum + i/target;
+            if(i % target != 0)
+            {
+                sum++;
+            }
         }
 
         return sum;
